@@ -45,6 +45,7 @@ QString RestApi::V2::App::start(QString uri, QString package_name, QString class
     MyLibfacade->initParser();
 
     JsonResponse.reset();
+    JsonResponse.insertStringValuePair("uri", uri);
     JsonResponse.insertStringValuePair("packageName", package_name);
     JsonResponse.insertStringValuePair("className", class_name);
     JsonResponse.insertStringValuePair("data", uri);
@@ -73,6 +74,7 @@ QString RestApi::V2::App::exec(QString uri, QString package_name, QString class_
     MyLibfacade->initParserWithTemporaryFile(uri);
 
     JsonResponse.reset();
+    JsonResponse.insertStringValuePair("uri", uri);
     JsonResponse.insertStringValuePair("packageName", package_name);
     JsonResponse.insertStringValuePair("className", class_name);
     JsonResponse.insertStringValuePair("data", uri);
@@ -95,6 +97,7 @@ QString RestApi::V2::App::switchByMode(QString mode)
     MyLibfacade->initParser();
 
     JsonResponse.reset();
+    JsonResponse.insertStringValuePair("uri", MyLibfacade->getConfiguration()->getIndexUri());
     JsonResponse.insertStringValuePair("packageName", "");
     JsonResponse.insertStringValuePair("className", "");
     JsonResponse.insertStringValuePair("data", MyLibfacade->getConfiguration()->getIndexUri());
