@@ -1,0 +1,1 @@
+Digital Signage Media Player based on SMIL standard
