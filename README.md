@@ -12,7 +12,7 @@ The garlic-player offers you more independence and security for your investment 
 
 Click on the image to see how a Raspberry Pi 4 playing four videos in zones.
 
-Binaries can be [downloaded](https://garlic-player.com/garlic-player/downloads/). You will find stable releases and nightly build there.
+Binaries can be [downloaded](https://garlic-signage.com/garlic-player/downloads/). You will find stable releases and nightly build there.
 
 ## Features (master trunk)
  - Support for multiple screens (not on Android)
@@ -144,10 +144,10 @@ For Android and iOS player-c2qml is needed, cause only QML based multimedia is s
 ## additional features supported not in w3c standard
  - **shuffle play** in seq container via metadata
  - **automatic refresh** via metatags in SMIL header
- - **Logs/reports** system and inventory-reports, events- and playlogs via subscription meta and delivery by webdav described in [Reporting](https://garlic-player.com/garlic-player/docs/essentials/logs-reports/)
- - **expr-attribute** in media tags [conditional play](https://garlic-player.com/garlic-player/docs/essentials/conditional-play/)
+ - **Logs/reports** system and inventory-reports, events- and playlogs via subscription meta and delivery by webdav described in [Reporting](https://garlic-signage.com/garlic-player/docs/essentials/logs-reports/)
+ - **expr-attribute** in media tags [conditional play](https://garlic-signage.com/garlic-player/docs/essentials/conditional-play/)
  - notify network trigger for begin and end attributes
- - REST-API ([documentation](https://garlic-player.com/garlic-player/docs/rest-api/))
+ - REST-API ([documentation](https://garlic-signage.com/garlic-player/docs/rest-api/))
  - placeholer in head with status and data tags
  - http downloads and caching
  - caching of remote SMIL index file
