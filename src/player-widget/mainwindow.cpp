@@ -31,7 +31,7 @@ MainWindow::MainWindow(TScreen *screen, LibFacade *lib_facade)
 
     connect(MyLibFacade, SIGNAL(rebootOS(QString)), this, SLOT(rebootOS(QString)));
     connect(MyLibFacade, SIGNAL(installSoftware(QString)), this, SLOT(installSoftware(QString)));
-    connect(MyLibFacade, SIGNAL(screenshot(QString)), this, SLOT(takeScreenShot(QString)));
+    connect(MyLibFacade, SIGNAL(screenshot(QString)), this, SLOT(takeScreenshot(QString)));
 
     setCursor(Qt::BlankCursor);
     setCentralWidget(centralWidget);
