@@ -11,7 +11,7 @@ steps:
       - apt-get update && apt-get install -y git xmlstarlet
       - bash /home/niko/scripts/1.2_buildLinux64.sh
   - name: appimage
-    image: debian:bookworm
+    image: garlic-build:1.0
     commands:
       - bash /home/niko/scripts/1.5_buildAppImage.sh
   - name: deploy
