@@ -8,6 +8,7 @@ steps:
   - name: build
     image: bitnami/git:latest
     commands:
+      - apt-get update && apt-get install -y xmlstarlet
       - bash /home/niko/scripts/1.2_buildLinux64.sh
   - name: appimage
     image: debian:bookworm
