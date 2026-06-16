@@ -1,14 +1,18 @@
+clone:
+  - name: clone
+    image: woodpeckerci/plugin-git
+    settings:
+      tags: true
+
 steps:
   - name: build
     image: bitnami/git:latest
     commands:
       - bash /home/niko/scripts/1.2_buildLinux64.sh
-
   - name: appimage
     image: debian:bookworm
     commands:
       - bash /home/niko/scripts/1.5_buildAppImage.sh
-
   - name: deploy
     image: appleboy/drone-ssh
     settings:
