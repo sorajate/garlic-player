@@ -21,4 +21,4 @@ steps:
       key:
         from_secret: GarlicSignageKey
       script:
-        - bash /home/niko/deploy.sh
+        - bash /home/niko/scripts/1.6_deploy.sh
