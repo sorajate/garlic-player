@@ -6,7 +6,7 @@ clone:
 
 steps:
   - name: build
-    image: debian:bookworm
+    image: garlic-build:1.0
     commands:
       - apt-get update && apt-get install -y git xmlstarlet
       - bash /home/niko/scripts/1.2_buildLinux64.sh
