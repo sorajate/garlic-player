@@ -1,6 +1,6 @@
 steps:
   - name: build
-    image: debian:bookworm
+    image: bitnami/git:latest
     commands:
       - bash /home/niko/scripts/1.2_buildLinux64.sh
 
