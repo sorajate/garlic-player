@@ -19,4 +19,6 @@ jobs:
 
     steps:
       - name: Run Build Script
-        run: C:\BuildEssentials\3.1_buildPlayer.bat
+        shell: cmd
+        run: |
+          call "C:\BuildEssentials\3.1_buildPlayer.bat"
