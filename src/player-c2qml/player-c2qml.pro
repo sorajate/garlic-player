@@ -4,7 +4,7 @@ QT          += core sql widgets gui xml xmlpatterns quick qml quickcontrols2 mul
 CONFIG      += warn_on c++11
 TARGET       = garlic-player
 TEMPLATE     = app
-DESTDIR      = ../bin
+!ios:DESTDIR      = ../bin
 INCLUDEPATH +=../ext/zlib/includes
 INCLUDEPATH += ../ext/QtWebApp/httpserver
 INCLUDEPATH +=../ext/quazip/includes
@@ -25,11 +25,13 @@ macx {
 ios {
     QT += webview
     LIBS += -L../libios -lgarlic -lquazip -lzlib
+    LIBS += -L$$[QT_INSTALL_PLUGINS]/mediaservice -lqavfmediaplayer -lqavfcamera
+        LIBS += -framework CoreMedia -framework CoreVideo -framework AVFoundation -framework Metal
    # XCODEBUILD_FLAGS += -allowProvisioningUpdates
 
   #  QMAKE_INFO_PLIST = path/to/your/Info.plist
-  #  QMAKE_TARGET_BUNDLE_PREFIX = com.smilcontrol
-   QMAKE_BUNDLE = garlic-player
+    QMAKE_TARGET_BUNDLE_PREFIX = com.sagiadinos
+    QMAKE_BUNDLE = garlic-player
     QMAKE_IOS_DEPLOYMENT_TARGET = 12.0
   #  QMAKE_APPLE_TARGETED_DEVICE_FAMILY = 1,2
 }
