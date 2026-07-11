@@ -1,4 +1,5 @@
 #include "disc_space.hpp"
+#include <QDebug>
 
 SystemInfos::DiscSpace::DiscSpace(IStorageInfo *si, QObject *parent) : QObject(parent)
 {
@@ -8,6 +9,7 @@ SystemInfos::DiscSpace::DiscSpace(IStorageInfo *si, QObject *parent) : QObject(p
 void SystemInfos::DiscSpace::init(QString path)
 {
     cache_path = path;
+    qDebug() << "setPath called with:" << cache_path;
     MyStorage->setPath(cache_path);
 
     // Remark: We get screwed, when a disc quota < storage.bytesAvailable()
@@ -40,7 +42,14 @@ quint64 SystemInfos::DiscSpace::getBytesLocked()
 
 quint64 SystemInfos::DiscSpace::calculateFreeBytes()
 {
-    qint64 tmp = MyStorage->bytesAvailable() - bytes_locked;
+    qDebug() << "isValid:" << MyStorage->isValid()
+    << "isReady:" << MyStorage->isReady()
+    << "bytes_locked:" << bytes_locked
+    << "bytesTotal:" << MyStorage->bytesTotal()
+    << "bytesAvailable:" << MyStorage->bytesAvailable();
+
+    qint64 available = MyStorage->bytesAvailable();
+    qint64 tmp = available - bytes_locked;
     if (tmp < 0)
         return 0;
 
