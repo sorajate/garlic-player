@@ -181,7 +181,7 @@ win32 {
 }
 
 macx {
-    QMAKE_APPLE_DEVICE_ARCHS = arm64 #x86_64
+    QMAKE_APPLE_DEVICE_ARCHS = arm64 x86_64
     debug:CONFIG+=sdk_no_version_check # remove annoying SDK messages on Apple Silicon
     ICON = ../../deployment/macx/garlic-player.icns
 
