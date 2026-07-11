@@ -6,6 +6,8 @@ TEMPLATE = lib
 TARGET = zlib
 INCLUDEPATH += .
 CONFIG += c++17 staticlib
+DEFINES += Z_HAVE_UNISTD_H
+
 Release:DEFINES += QT_NO_DEBUG_OUTPUT
 
 linux:!android {
@@ -15,10 +17,12 @@ linux:!android {
     QMAKE_CXXFLAGS += -Wno-deprecated-declarations -Wno-deprecated-copy
     DESTDIR = ../../lib/
 }
+QMAKE_CFLAGS += -std=gnu99
 win32:DESTDIR = ../../lib/
 macx:{
     DESTDIR = ../../lib/
     QMAKE_APPLE_DEVICE_ARCHS = x86_64 arm64
+    QMAKE_CFLAGS += -D_DARWIN_C_SOURCE
 }
 android {
     DESTDIR = ../../libandroid/
