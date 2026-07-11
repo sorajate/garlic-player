@@ -50,10 +50,10 @@ void LibFacade::init(MainConfiguration *config)
     MyConfiguration.reset(config);
     MyInventoryTable.reset(new DB::InventoryTable(this));
     MyInventoryTable.data()->init(MyConfiguration.data()->getPaths("logs"));
+    MyDiscSpace.data()->init(MyConfiguration.data()->getPaths("cache"));
     MyFreeDiscSpace.data()->init(MyConfiguration.data()->getPaths("cache"));
     MyFreeDiscSpace.data()->setInventoryTable(MyInventoryTable.data());
 
-    MyDiscSpace.data()->init(MyConfiguration.data()->getPaths("cache"));
     MyIndexManager.reset(new Files::IndexManager(MyInventoryTable.data(), MyConfiguration.data(), MyFreeDiscSpace.data(), this));
     connect(MyIndexManager.data(), SIGNAL(readyForLoading()), this, SLOT(loadIndex()));
 
