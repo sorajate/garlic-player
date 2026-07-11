@@ -28,6 +28,11 @@
     #include "android_manager.h"
 #endif
 
+#ifdef Q_OS_IOS
+    #include <QtPlugin>
+#endif
+
+
 #include <QtWebView>
 #include "mainwindow.h"
 #include "rest_api/httpd.h"
@@ -43,6 +48,10 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts); // Raspberry and POT needs this http://thebugfreeblog.blogspot.de/2018/01/pot-570-with-qt-5100-built-for-armv8.html
+
+#ifdef Q_OS_IOS
+    Q_IMPORT_PLUGIN(AVFMediaPlayerServicePlugin)
+#endif
 
     QApplication app(argc, argv);
     QtWebView::initialize();
