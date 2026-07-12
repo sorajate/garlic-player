@@ -26,14 +26,16 @@ ios {
     QT += webview
     LIBS += -L../libios -lgarlic -lquazip -lzlib
     LIBS += -L$$[QT_INSTALL_PLUGINS]/mediaservice -lqavfmediaplayer -lqavfcamera
-        LIBS += -framework CoreMedia -framework CoreVideo -framework AVFoundation -framework Metal
-   # XCODEBUILD_FLAGS += -allowProvisioningUpdates
+    LIBS += -framework CoreMedia -framework CoreVideo -framework AVFoundation -framework Metal
+    QMAKE_ASSET_CATALOGS = ../../deployment/ios/Assets.xcassets
 
-  #  QMAKE_INFO_PLIST = path/to/your/Info.plist
+#    XCODEBUILD_FLAGS += -allowProvisioningUpdates
+
+    QMAKE_INFO_PLIST = ios/Info.plist
     QMAKE_TARGET_BUNDLE_PREFIX = com.sagiadinos
     QMAKE_BUNDLE = garlic-player
-    QMAKE_IOS_DEPLOYMENT_TARGET = 12.0
-  #  QMAKE_APPLE_TARGETED_DEVICE_FAMILY = 1,2
+    QMAKE_IOS_DEPLOYMENT_TARGET = 13.0
+#    QMAKE_APPLE_TARGETED_DEVICE_FAMILY = 1,2
 }
 
 linux:!android {
