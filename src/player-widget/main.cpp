@@ -33,6 +33,7 @@ void handleMessages(QtMsgType type, const QMessageLogContext &context, const QSt
 
 int main(int argc, char *argv[])
 {
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--allow-file-access-from-files --disable-web-security");
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication::setAttribute(Qt::AA_X11InitThreads);
 

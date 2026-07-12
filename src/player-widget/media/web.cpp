@@ -67,9 +67,9 @@ void PlayerWeb::loadMedia(BaseMedia *media, Region *reg)
     browser->settings()->setAttribute(QWebEngineSettings::ShowScrollBars, false);
     browser->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true); // needed to block SOP Attention can be deprecated look at param functions in main.cpp
     browser->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, true); // needed to deblock CORS for local files
+    browser->settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, true);
 /*
     // activates everything for debug and testing
-    browser->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
     browser->settings()->setAttribute(QWebEngineSettings::SpatialNavigationEnabled, true);
     browser->settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, true);
     browser->settings()->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled, true);

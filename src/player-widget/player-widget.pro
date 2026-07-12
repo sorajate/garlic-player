@@ -49,6 +49,7 @@ macx {
     CONFIG   += support_qtmm
 }
 
+
 support_qtavplayer {
     DEFINES += SUPPORT_QTAVPLAYER
     DEFINES+="QT_AVPLAYER_MULTIMEDIA"
