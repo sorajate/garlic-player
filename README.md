@@ -32,6 +32,7 @@ Binaries can be [downloaded](https://garlic-signage.com/garlic-player/downloads/
  - Windows
  - Android
  - macOS
+ - iOS in testing: https://testflight.apple.com/join/1Y79ryHC if you want to join
  
 ### Successfully Tested With:
  - Linux 64Bit: Kde Neon, Kubuntu, Debian, Arch64
@@ -39,9 +40,10 @@ Binaries can be [downloaded](https://garlic-signage.com/garlic-player/downloads/
  - Tinker Board: (Linaro OS 1.8)
  - Android Armv7 (4.4.1, 5.0.1, 5.1.1, 6.0.2, 7.1, 9 and 10)
  - Windows 64Bit: 7, 8, 10, and 11
- - MacOS 64Bit (Intel): High Sierra, Mojave, Catalina and Big Sur 
- - MacOS M1: Big Sur, Ventura (Universal Binary), Sonoma
+ - MacOS 64Bit (Intel): High Sierra+
+ - MacOS M1: Big Sur+
  - iOS 14.4.2 (experimental)
+
 
 ## Command Line Options
 
