@@ -22,3 +22,10 @@ jobs:
         shell: cmd
         run: |
           call "C:\BuildEssentials\3.1_buildPlayer.bat"
+
+ build-linux-arm64:
+    runs-on: [self-hosted, Linux, ARM64]
+ 
+    steps:
+      - name: Run Build Script
+        run: /home/niko/scripts/build.sh      
