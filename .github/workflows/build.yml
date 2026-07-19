@@ -1,31 +1,24 @@
 name: Build
-
 on:
   push:
     branches:
       - master
   workflow_dispatch:
-
 jobs:
   build-macos:
     runs-on: [self-hosted, macOS, ARM64]
-
     steps:
       - name: Run Build Script
         run: /Users/niko/Deployment/scripts/build.sh
-
   build-windows:
     runs-on: [self-hosted, X64, Windows]
-
     steps:
       - name: Run Build Script
         shell: cmd
         run: |
           call "C:\BuildEssentials\3.1_buildPlayer.bat"
-
- build-linux-arm64:
+  build-linux-arm64:
     runs-on: [self-hosted, Linux, ARM64]
- 
     steps:
       - name: Run Build Script
-        run: /home/niko/scripts/build.sh      
+        run: /home/niko/scripts/build.sh
