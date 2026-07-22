@@ -8,17 +8,26 @@ jobs:
   build-macos:
     runs-on: [self-hosted, macOS, ARM64]
     steps:
-      - name: Run Build Script
-        run: /Users/niko/Deployment/scripts/build.sh
+      - name: Run macOS Build Script
+        run: /Users/niko/Deployment/scripts/build-macosx.sh
+      - name: Run iOS Build Script
+        run: /Users/niko/Deployment/scripts/build-ios.sh
   build-windows:
     runs-on: [self-hosted, X64, Windows]
     steps:
-      - name: Run Build Script
+      - name: Run Windows 11 Build Script
         shell: cmd
         run: |
           call "C:\BuildEssentials\3.1_buildPlayer.bat"
   build-linux-arm64:
     runs-on: [self-hosted, Linux, ARM64]
     steps:
-      - name: Run Build Script
+      - name: Run Arm64 Linux Build Script
         run: /home/niko/scripts/build.sh
+  build-linux-X64:
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - name: Run x64 Linux Build Script
+        run: /home/niko/scripts/build-linux.sh
+      - name: Run Android multiabiBuild Script
+        run: /home/niko/scripts/build-android.sh
